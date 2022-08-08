@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "strict": true,                                       /* Enable all strict type-checking options. */
+    "target": "es6",                                      /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
+    "lib": ["es6"],                                       /* Alias for "ES2015" */
+    "module": "commonjs",                                 /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
+    "moduleResolution": "node",                           /* Specify the module resolution strategy: 'node' (Node.js) or 'classic' (used in TypeScript before the release of 1.6). You probably won’t need to use classic in modern code.*/
+    "outDir": "./lib",                                    /* Redirect output structure to the directory. */
+    "experimentalDecorators": true,                       /* Enables experimental support for decorators, which is in stage 2 of the TC39 standardization process. Decorators are a language feature which hasn’t yet been fully ratified into the JavaScript specification.*/
+    "forceConsistentCasingInFileNames": true,             /* TypeScript follows the case sensitivity rules of the file system it’s running on. This can be problematic if some developers are working in a case-sensitive file system and others aren’t. When this option is set, TypeScript will issue an error if a program tries to include a file by a casing different from the casing on disk.*/
+    "sourceMap": true,                                    /* Enables the generation of sourcemap files. These files allow debuggers and other tools to display the original TypeScript source code when actually working with the emitted JavaScript files. Source map files are emitted as .js.map (or .jsx.map) files next to the corresponding .js output file. */
+    "skipLibCheck": true,                                 /* Skip type checking of default library declaration files. */
+    "emitDecoratorMetadata": true,                        /* Enables experimental support for emitting type metadata for decorators which works with the module reflect-metadata. */
+    "declaration": true,                                  /* Generate .d.ts files for every TypeScript or JavaScript file inside your project. These .d.ts files are type definition files which describe the external API of your module. With .d.ts files, tools like TypeScript can provide intellisense and accurate types for un-typed code. */
+    "esModuleInterop": true                               /* TypeScript treats differente CommonJS/AMD/UMD modules and ES6 modules. Fix a couple of problems in the code transpiled by TypeScript. The first changes the behavior in the compiler, the second is fixed by two new helper functions which provide a shim to ensure compatibility in the emitted JavaScript. */
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "lib", "**/*.tests.ts"]
+}
