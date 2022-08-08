@@ -35,13 +35,6 @@ export const connectToMongoDB = async (): Promise<Mongoose | void> => {
                 resolve()
             });
 
-            // const options = {
-            //     keepAlive: true,
-            //     useNewUrlParser: true,
-            //     useUnifiedTopology: true,
-            //     useCreateIndex: true
-            // }
-
             const options = {
                 useCreateIndex: true,
                 useNewUrlParser: true,

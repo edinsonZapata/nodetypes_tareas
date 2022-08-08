@@ -1,5 +1,6 @@
 import {model, Schema, SchemaDefinition} from "mongoose";
 import {UserDocument} from "../documents";
+import {compareSync, genSaltSync, hashSync} from "bcryptjs";
 const {Types} = Schema;
 
 export const UserIdentityInfoSchemaDefinition: SchemaDefinition = {
@@ -30,6 +31,10 @@ const UserSchema = new Schema(
             enum: ['BASE', 'AGENT', 'ADMIN'],
             default: 'BASE',
         },
+        password: {
+            type: Types.String,
+            required: true,
+        },
         deleted: {
             type: Types.Boolean,
             default: false,
@@ -51,5 +56,41 @@ const UserSchema = new Schema(
         timestamps: true,
     }
 );
+
+UserSchema.pre<UserDocument>('findOneAndUpdate'as any, async function findOneAndUpdate(next) {
+    try {
+
+        const data  =  (this as any).getUpdate();
+        if (data.password) {
+            const salt = genSaltSync(10);
+            data.password = hashSync(data.password, salt); 
+        }
+        next()
+
+    } catch (error: any) {
+        next(error)
+    }
+});
+
+UserSchema.pre<UserDocument>('save', async function save(next) {
+    try {
+
+        if (!this.isModified('password')) {
+            return next()
+        }
+
+        const salt = genSaltSync(10);
+        this.password = hashSync(this.password, salt);
+
+        next()
+
+    } catch (error: any) {
+        next(error)
+    }
+});
+
+UserSchema.methods.comparePassword = function (candidatePassword: string): boolean {
+    return compareSync(candidatePassword, (this as any).password)
+};
 
 export const User = model<UserDocument>('User', UserSchema);

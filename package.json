@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sebastianpl1306/tareas-nodetypes.git"
+    "url": "git+https://github.com/edinsonZapata/nodetypes_tareas.git"
   },
-  "author": "sebastian pabon",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sebastianpl1306/tareas-nodetypes/issues"
+    "url": "https://github.com/edinsonZapata/nodetypes_tareas/issues"
   },
-  "homepage": "https://github.com/sebastianpl1306/tareas-nodetypes#readme",
+  "homepage": "https://github.com/edinsonZapata/nodetypes_tareas#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cron-parser": "^3.3.0",
