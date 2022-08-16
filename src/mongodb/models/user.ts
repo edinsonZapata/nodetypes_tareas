@@ -28,12 +28,20 @@ const UserSchema = new Schema(
         ...UserIdentityInfoSchemaDefinition,
         role: {
             type: Types.String,
-            enum: ['BASE', 'AGENT', 'ADMIN'],
+            enum: ['BASE','ADMIN'],
             default: 'BASE',
         },
         password: {
             type: Types.String,
             required: true,
+        },
+        typeDocument:{
+            type: Types.String,
+            required: true
+        },
+        numberDocument:{
+            type: Types.String,
+            required: true
         },
         deleted: {
             type: Types.Boolean,
