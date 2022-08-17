@@ -42,3 +42,5 @@ const TaskSchema = new Schema(
 );
 
 export const Task = model<TaskDocument>("Task", TaskSchema);
+
+export declare const tasks: import("mongoose").Model<TaskDocument, {}, {}>;
