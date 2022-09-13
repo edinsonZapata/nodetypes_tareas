@@ -18,7 +18,7 @@ const TaskSchema = new Schema(
         },
         status: {
             type: Types.String,
-            enum: ['EARRING', 'RESOLVED'],
+            enum: ['EARRING', 'RESOLVED', 'REMOVED'],
             default: 'EARRING'
         },
         assessment: {
