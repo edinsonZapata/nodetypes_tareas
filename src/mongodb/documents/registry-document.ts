@@ -1,7 +1,6 @@
 import {Document} from "mongoose";
 import {ITimestamp} from "../interfaces";
-import {TypeDocuments} from "../../enums/type-documents";
-import {UserRole} from "../../enums/user-role"
+import {TypeDocuments, UserRole} from "../../enums";
 
 export interface RegistryDocument extends Document, ITimestamp {
     name: string

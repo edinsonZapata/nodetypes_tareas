@@ -4,6 +4,7 @@ import {UserRole} from "../../enums";
 
 
 export interface UserDocument extends IUserIdentityInfo, Document, ITimestamp {
+    email: string,
     password: string,
     role: UserRole,
     lastLogin: Date,

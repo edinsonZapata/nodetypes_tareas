@@ -18,7 +18,7 @@ const TaskSchema = new Schema(
         },
         status: {
             type: Types.String,
-            enum: ['EARRING', 'RESOLVED'],
+            enum: ['EARRING', 'RESOLVED', 'REMOVED'],
             default: 'EARRING'
         },
         assessment: {
@@ -42,5 +42,3 @@ const TaskSchema = new Schema(
 );
 
 export const Task = model<TaskDocument>("Task", TaskSchema);
-
-export declare const tasks: import("mongoose").Model<TaskDocument, {}, {}>;

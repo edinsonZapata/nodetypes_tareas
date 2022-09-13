@@ -8,18 +8,18 @@ export const UserIdentityInfoSchemaDefinition: SchemaDefinition = {
         type: {
             firstName: {
                 type: Types.String,
-                required: true,
+                required: false,
             },
             lastName: {
                 type: Types.String,
                 default: "",
             },
         },
-        required: true,
+        required: false,
     },
     username: {
         type: Types.String,
-        required: true,
+        required: false,
     },
 };
 
@@ -31,17 +31,21 @@ const UserSchema = new Schema(
             enum: ['BASE','ADMIN'],
             default: 'BASE',
         },
+        email:{
+            type: Types.String,
+            required: true,
+        },
         password: {
             type: Types.String,
             required: true,
         },
         typeDocument:{
             type: Types.String,
-            required: true
+            required: false
         },
         numberDocument:{
             type: Types.String,
-            required: true
+            required: false
         },
         deleted: {
             type: Types.Boolean,
